@@ -1,0 +1,16 @@
+<h1><%= @book.title %></h1>
+<h3>Average Rating: <%= @book.avg_rating %>/5</h3>
+<h3>Highest Rating: <%= @book.max_rating %>/5</h3>
+  <p><%= @book.max_rating %></p>
+  <p><%= @book.review_with_max_rating %></p>
+<h3>Lowest Rating: <%= @book.min_rating %>/5</h3>
+  <p><%= @book.min_rating %></p>
+  <p><%= @book.review_with_min_rating %></p>
+
+<%= @book.reviews.each do |review| %>
+  <ul>
+    <li><%= review.user.name %> (<%= review.rating %>/5)
+      <p><%= review.body %></p>
+    </li>
+  </ul>
+<% end %>

@@ -52,4 +52,18 @@ describe Review do
 
   end
 
+  describe 'relations' do
+
+    it 'belongs to a user' do
+      review = create(:review)
+      expect(review.user).to be_a User
+    end
+
+    it 'belongs to a book' do
+      review = create(:review)
+      expect(review.book).to be_a Book
+    end
+
+  end
+
 end

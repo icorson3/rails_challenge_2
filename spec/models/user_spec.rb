@@ -14,6 +14,16 @@ describe User do
       expect(user).to be_invalid
     end
 
+    describe 'relations' do
+
+      it 'has many reviews' do
+        user = create(:user)
+        create(:review, user: user)
+        expect(user.reviews.first).to be_a Review
+      end
+
+    end
+
   end
 
 end

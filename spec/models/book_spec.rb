@@ -16,4 +16,14 @@ describe Book do
 
   end
 
+  describe 'relations' do
+
+    it 'has many reviews' do
+      book = create(:book)
+      create(:review, book: book)
+      expect(book.reviews.first).to be_a Review
+    end
+
+  end
+
 end

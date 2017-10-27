@@ -1,0 +1,11 @@
+<h1><%=@book.title%></h1>
+<h4>average rating: <%= @book.average%></h4>
+
+<h4>Highest rating: <%= @book.max%></h4>
+	<p><%=@book.max_review.body%> </p>
+<h4>Lowest rating:<%=@book.min %> </h4>
+	<p><%=@book.min_review.body%> </p>
+	<%@book.reviews.each do |review|%>
+		<li> (<%=review.rating%>) <%=review.body%> </li></br >
+		<%end%>
+

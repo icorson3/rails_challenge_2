@@ -1,19 +1,19 @@
-<h3><%= @book.title %></h3>
+<h1><%= @book.title %></h3>
+
+<p>Average Rating: <%= @book.average_rating %></p>
 
 <section class='highest-rating'>
-  <h5>Highest Rating: <%= @book.max_rating %></h5>
+  <h3>Highest Rating: <%= @book.max_rating %></h5>
   <p>Username: <%= @book.best_review.username %></p>
   <p>Review: <%= @book.best_review.body %></p>
 </section>
 
 <section class='lowest-rating'>
-  <h5>Lowest Rating: <%= @book.lowest_rating %></h5>
+  <h3>Lowest Rating: <%= @book.lowest_rating %></h5>
   <p>Username: <%= @book.worst_review.username %></p>
   <p>Review: <%= @book.worst_review.body %></p>
 </section>
 
-
-<p>Average Rating: <%= @book.average_rating %></p>
 
 <section class='reviews'>
   <ul>

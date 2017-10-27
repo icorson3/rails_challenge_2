@@ -22,5 +22,11 @@ describe Book do
         expect(@book.average_rating).to eq(2)
       end
     end
+
+    describe "#max_rating" do
+      it "finds the highest rating score" do
+        expect(@book.max_rating).to eq(4)
+      end
+    end
   end
 end

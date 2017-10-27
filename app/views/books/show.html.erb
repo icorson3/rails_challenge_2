@@ -1,1 +1,11 @@
 <h3><%= @book.title %></h3>
+
+<section class='reviews'>
+  <ul>
+  <% @book.reviews.each do |review| %>
+    <li>username: <%= review.username %></li>
+    <li>review: <%= review.body %></li>
+    <li>rating: <%= review.rating %></li>
+  <% end %>
+</ul>
+</section>

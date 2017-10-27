@@ -1,0 +1,20 @@
+
+<h2><%= @book.title %></h2>
+<br>
+<h4>Highest Rating: </h4>
+# name of reviewer who gave highest rating
+<h4>Average Rating: </h4>
+<h4>Lowest Rating: </h4>
+# name of reviewer who gave lowesr rating
+
+
+
+
+</head>
+<br>
+<%= @book.reviews.each do |review|%>
+  <%= review.body %>
+  <%= review.user %>
+  <%= review.rating %>
+<% end %>
+<br>

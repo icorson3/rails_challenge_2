@@ -1,5 +1,6 @@
 <h1><%= @book.title %></h1>
 <p>Average Rating: <%= @book.avg_rating %>/5</p>
+<p>Highest Rating: <%= @book.highest_rating %>/5</p>
 
 <%= @book.reviews.each do |review| %>
   <ul>

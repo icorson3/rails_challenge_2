@@ -1,0 +1,22 @@
+
+<%= @book.title %>
+
+<%= @book.reviews.each do |review|%>
+  <%= review.user.name %>
+  <%= review.body %>
+  <%= review.rating %>
+<% end %>
+<br>
+<h1>Average Rating</h1>
+<%= Review.average_rating(@book.id)%><br>
+
+<h1>Highest Rating</h1><br>
+<%= Review.highest_rating(@book.id)%><br>
+<%= Review.highest_rating_info(@book.id).user.name%><br>
+<%= Review.highest_rating_info(@book.id).body%>
+
+
+<h1>Lowest Rating</h1><br>
+<%= Review.lowest_rating(@book.id)%><br>
+<%= Review.lowest_rating_info(@book.id).user.name%><br>
+<%= Review.lowest_rating_info(@book.id).body%>

@@ -13,6 +13,13 @@
 require 'rails_helper'
 
 describe "User sees a book page" do
+
+  let (:book) { Book.create!(title: "Throne of Glass") }
+
+  before do
+    visit book_page(book)
+  end
+
   scenario "the book has a title" do
 
   end
@@ -32,7 +39,7 @@ describe "User sees a book page" do
   scenario "the book has a lowest rating and review" do
 
   end
-  
+
   scenario "the book has a title" do
 
   end

@@ -6,7 +6,12 @@
   <p>Review: <%= @book.best_review.body %></p>
 </section>
 
-<h5>Lowest Rating: <%= @book.lowest_rating %></h5>
+<section class='lowest-rating'>
+  <h5>Lowest Rating: <%= @book.lowest_rating %></h5>
+  <p>Username: <%= @book.worst_review.username %></p>
+  <p>Review: <%= @book.worst_review.body %></p>
+</section>
+
 
 <p>Average Rating: <%= @book.average_rating %></p>
 

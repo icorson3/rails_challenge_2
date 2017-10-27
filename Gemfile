@@ -35,8 +35,16 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+  gem 'launchy'
+  gem 'orderly'
+  gem 'pry'
+  gem 'pry-rails', :group => :development
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do

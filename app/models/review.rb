@@ -10,4 +10,8 @@ class Review < ApplicationRecord
   def self.max_rating
     maximum(:rating)
   end
+
+  def self.min_rating
+    minimum(:rating)    
+  end
 end

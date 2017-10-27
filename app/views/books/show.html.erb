@@ -1,0 +1,13 @@
+<h1><%= @book.title %></h1>
+
+<h3>Reviews(<%= @book.reviews.count %>)</h3>
+
+<% @book.reviews.each do |review| %>
+  Reviewed by: <%= review.user.name %><br>
+  <%= review.content %><br>
+  Rating: <%= review.rating %>
+<% end %>
+
+Average Rating: <%= @book.reviews.average_book_rating %>
+Highest Rating: <%= @book.reviews.max_min_book_rating("DESC") %>
+Lowest Rating: <%= @book.reviews.max_min_book_rating("ASC") %>

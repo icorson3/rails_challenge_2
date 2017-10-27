@@ -19,4 +19,8 @@ describe "When I visit a book show page" do
   it "I also see the rating that the user gave the book." do
     expect(page).to have_content(@review.rating)
   end
+
+  it "I also see the average rating for that book." do
+      expect(page).to have_content(@book.avg_rating)
+  end
 end

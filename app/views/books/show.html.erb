@@ -1,11 +1,10 @@
 <h1><%= @book.title %></h1>
+<p>Average Rating: <%= @book.avg_rating %>/5</p>
 
 <%= @book.reviews.each do |review| %>
-
-<ul>
-  <li><%= review.user.name %> (<%= review.rating %>/5)
-    <p><%= review.body %></p>
-  </li>
-</ul>
-
+  <ul>
+    <li><%= review.user.name %> (<%= review.rating %>/5)
+      <p><%= review.body %></p>
+    </li>
+  </ul>
 <% end %>

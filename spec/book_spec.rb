@@ -32,4 +32,10 @@ describe Book do
 
     expect(book).to respond_to(:reviews)
   end
+
+  it "has relationship to user" do
+    book = Book.create(title: "Big")
+
+    expect(book).to respond_to(:users)
+  end
 end

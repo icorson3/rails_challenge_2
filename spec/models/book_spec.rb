@@ -1,9 +1,9 @@
-require 'rails-helper'
+require 'rails_helper'
 
 describe Book do
 
   describe 'validations' do
-    
+
     it 'pass with a title' do
       book = Book.new(title: 'title')
       expect(book).to be_valid

@@ -19,5 +19,7 @@ describe "When a user visits a book show page" do
     expect(page).to have_content "Average Rating: 2"
 
     expect(page).to have_content "Highest Rating: 4"
+
+    expect(page).to have_content "Lowest Rating: 1"
   end
 end

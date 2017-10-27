@@ -28,5 +28,11 @@ describe Book do
         expect(@book.max_rating).to eq(4)
       end
     end
+
+    describe "#lowest_rating" do
+      it "finds the lowest rating score" do
+        expect(@book.lowest_rating).to eq(1)
+      end
+    end
   end
 end

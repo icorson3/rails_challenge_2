@@ -34,5 +34,13 @@ describe Book do
         expect(@book.lowest_rating).to eq(1)
       end
     end
+
+    describe "#best_review" do
+      it "finds the review with the highest rating score" do
+        review = @book.best_review
+        expect(review.username).to eq("grayton")
+        expect(review.body).to eq("i really liked this book")
+      end
+    end
   end
 end

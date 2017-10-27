@@ -11,9 +11,9 @@ describe "When a user visits a book show page" do
     expect(page).to have_content("Book1")
 
     within(".reviews") do
-      expect(page).to have_content "username: grayton"
-      expect(page).to have_content "review: i really liked this book"
-      expect(page).to have_content "rating: 5"
+      expect(page).to have_content "Username: grayton"
+      expect(page).to have_content "Review: i really liked this book"
+      expect(page).to have_content "Rating: 5"
     end
 
     expect(page).to have_content "Average Rating: 3"

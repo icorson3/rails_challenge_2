@@ -17,7 +17,7 @@ describe "User sees a book page" do
   let (:book) { Book.create!(title: "Throne of Glass") }
 
   before do
-    visit book_page(book)
+    visit book_path(book)
   end
 
   scenario "the book has a title" do

@@ -20,11 +20,11 @@ ActiveRecord::Schema.define(version: 20171027160715) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.bigint "books_id"
-    t.bigint "users_id"
+    t.bigint "book_id"
+    t.bigint "user_id"
     t.text "body"
-    t.index ["books_id"], name: "index_reviews_on_books_id"
-    t.index ["users_id"], name: "index_reviews_on_users_id"
+    t.index ["book_id"], name: "index_reviews_on_book_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,4 +1,30 @@
-<%= @book.title %>
-<%= @user.name %>
-<%= @review.rating %>
-<%= @review.body %>
+<h3>Book Title: <%= @book.title %></h3><br>
+
+<% @book.reviews.each do |review|%>
+<ul>
+  <li>
+    Reviewer: <%= review.user.name %><br>
+    Review: <%= review.body %><br>
+    Rating: <%= review.rating %>
+  </li>
+</ul>
+<% end %>
+<br>
+
+<p>Average Rating: <%= Review.average_rating %></p>
+<h3>Highest Rating: <%= Review.highest_rating %></h3>
+<div class="review1">
+  <% @review1 =  Review.highest_rated_review %>
+  <ul>
+    <li>Review: <%= @review1.body %>
+    Reviewer: <%= @review1.user.name %></li>
+  </ul>
+</div>
+<h3>Lowest Rating: <%= Review.lowest_rating %></h3>
+<div class="review2">
+  <% @review2 =  Review.lowest_rated_review %>
+  <ul>
+    <li>Review: <%= @review2.body %>
+    Reviewer: <%= @review2.user.name %></li>
+  </ul>
+</div>

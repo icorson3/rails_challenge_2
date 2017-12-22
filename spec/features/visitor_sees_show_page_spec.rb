@@ -40,7 +40,18 @@ describe "As a visitor" do
     end
 
     it 'displays the average rating for that book' do
+      expect(page).to have_content("Average Rating:")
       expect(page).to have_content(3)
+    end
+
+    it "displays highest rating for that book" do
+      expect(page).to have_content("Highest Rating:")
+      expect(page).to have_content(5)
+    end
+
+    it "displays loweest rating for that book" do
+      expect(page).to have_content("Lowest Rating:")
+      expect(page).to have_content(1)
     end
   end
 end

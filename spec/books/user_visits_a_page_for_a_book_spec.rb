@@ -15,13 +15,13 @@ describe "a user visits a book show page" do
                           body: "A Charmingish Tale",
                           book: book,
                           user: user1)
-      review = Review.create(rating: 3,
+      review = Review.create(rating: 4,
                           body: "What is this book about again?",
                           book: book,
                           user: user2)
 
-      visit "/books/1"
-
+      visit "/books/#{book.id}"
+      
       expect(page).to have_content("Average Rating: 4")
     end
   end

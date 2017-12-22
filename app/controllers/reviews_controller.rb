@@ -1,0 +1,3 @@
+class Reviews < ApplicationController
+  
+end

@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  resources :books, only: [:show]
+  resources :books, only: [:show] do 
+    resources :reviews
+  end
+  resources :users
 end

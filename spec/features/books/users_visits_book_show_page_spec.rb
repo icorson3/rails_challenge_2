@@ -7,7 +7,7 @@ describe "When the User navigates to the book show page" do
 
     user = User.create(name: "Young")
     user2 = User.create(name: "Gary")
-    user3 = User.create("Shirley")
+    user3 = User.create(name: "Shirley")
 
     user.reviews.create(rating: 5, body: "Great book!", book_id: book.id)
     user2.reviews.create(rating: 3, body: "Liked it!", book_id: book.id)

@@ -11,8 +11,8 @@
   <ul>
     <% @book.reviews.each do |review| %>
       <li><%= review.body %></li>
-      <li><%= review.body %></li>
-      <li><%= review.body %></li>
+      <li><%= review.rating %></li>
+      <li><%= review.user.name %></li>
     <% end %>
   </ul>
 </div>

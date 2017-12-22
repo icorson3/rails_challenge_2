@@ -1,0 +1,25 @@
+<h1><%= @book.title %></h1>
+<h5>Average rating: <%= @book.average_rating %></h5>
+
+<h3 class="highest_rating">Highest Rating: <%= @book.best_review.rating %></h3>
+  <ul>
+    <li id="highest_rating_author">Author: <%= @book.best_review.author %></li>
+    <li id="highest_rating_body">Body: <%= @book.best_review.body %></li>
+  </ul>
+
+<h3 class="lowest_rating">Lowest Rating: <%= @book.worst_review.rating %></h3>
+  <ul>
+    <li id="lowest_rating_author">Author: <%= @book.worst_review.author %></li>
+    <li id="lowest_rating_body">Body: <%= @book.worst_review.body %></li>
+  </ul>
+
+
+
+<h3>Reviews</h3>
+<ul>
+  <%= @book.reviews.each do |review| %>
+  <li>User Name: <%= review.user.name %></li>
+  <li>Rating: <%= review.rating %></li>
+  <li>Body: <%= review.body %></li>
+  <% end %>
+</ul>

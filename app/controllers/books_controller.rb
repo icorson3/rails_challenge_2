@@ -4,6 +4,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @avg_rating = @book.reviews.average(:rating).to_i
     @high_rating = @book.reviews.maximum(:rating).to_i
+    @low_rating = @book.reviews.minimum(:rating).to_i
   end
 
 end

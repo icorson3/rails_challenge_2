@@ -19,19 +19,19 @@ ActiveRecord::Schema.define(version: 20171222162722) do
     t.string "title"
   end
 
-  create_table "reviews_tables", force: :cascade do |t|
+  create_table "reviews", force: :cascade do |t|
     t.text "body"
     t.integer "rating"
     t.bigint "book_id"
     t.bigint "user_id"
-    t.index ["book_id"], name: "index_reviews_tables_on_book_id"
-    t.index ["user_id"], name: "index_reviews_tables_on_user_id"
+    t.index ["book_id"], name: "index_reviews_on_book_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
   end
 
-  add_foreign_key "reviews_tables", "books"
-  add_foreign_key "reviews_tables", "users"
+  add_foreign_key "reviews", "books"
+  add_foreign_key "reviews", "users"
 end

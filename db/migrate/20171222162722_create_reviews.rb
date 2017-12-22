@@ -1,6 +1,6 @@
 class CreateReviews< ActiveRecord::Migration[5.1]
   def change
-    create_table :reviews_tables do |t|
+    create_table :reviews do |t|
       t.text :body
       t.integer :rating
       t.references :book, foreign_key: true

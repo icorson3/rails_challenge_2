@@ -1,0 +1,9 @@
+<%= @book.title %>
+
+<%= @book.reviews.each do |review|%>
+  <%= review.user.name %>
+  <%= review.body %>
+  <%= review.rating %>
+<% end %>
+
+<h2>Average Rating<h2>

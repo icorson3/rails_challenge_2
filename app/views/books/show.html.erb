@@ -2,6 +2,11 @@
 
 <h4>Average Rating: <%= @avg_rating%> </h4>
 
-<h4> Highest Rating: <%= @high_rating%> </h4>
+<div id=high-rating>
+  <h4> Highest Rating: <%= @high_rating%> </h4>
+  <h5> What this reviewer had to say: </h5>
+  <p> <%= @high_review.body %> </p>
+  <h6> Contributed by: <%= @high_review.user.name %> </h6>
+</div>
 
 <h4> Lowest Rating: <%= @low_rating %></h4>

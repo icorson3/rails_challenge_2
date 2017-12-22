@@ -1,18 +1,14 @@
-describe "User can visit their show page" do
-  context "they see book title and list of reviews" do
-    context "they see body and user that created review" do
-      context "they see rating for that book" do
-        it "they see their books" do
-        user = create(:user)
-        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+require 'rails_helper'
 
-        visit "/users/#{user.id}"
+describe "User logs in" do
+  scenario "sees books" do
+    user = User.create(name: "Sally")
+    book = Book.create(title: "Harry Potter")
 
-        expect(page).to have_content("Welcome, #{user.name}")
-        expect(page).to have_content("")
-        end
-      end
-    end
+    visit book_path(book)
+
+    expect(page).to have_content("Welcome, #{user.name}")
+    expect(page).to have_content("Harry Potter")
   end
 end
 

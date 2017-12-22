@@ -12,6 +12,5 @@ describe 'a user visits the book show page' do
     expec(page).to have_content 'Game of Thrones'
     expect(page).to have_content 'a review'
     expect(page).to have_content "#{@user.name}"
-
   end
 end

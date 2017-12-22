@@ -1,14 +1,20 @@
 require 'rails_helper'
 
 describe "User logs in" do
-  scenario "sees books" do
+  scenario "sees book title" do
     user = User.create(name: "Sally")
     book = Book.create(title: "Harry Potter")
+    review = book.reviews.create(body: "love this story", rating: 5)
 
     visit book_path(book)
 
-    expect(page).to have_content("Welcome, #{user.name}")
+    # expect(page).to have_content("Welcome, Sally")
     expect(page).to have_content("Harry Potter")
+  end
+
+  scenario "see book review" do
+    expect(page).to have_content(review.body)
+    expect(page).to have_content(review.rating)
   end
 end
 

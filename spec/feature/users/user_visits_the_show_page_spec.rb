@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-desribe "When a user visits the show page" do
+describe "When a user visits the show page" do
   before(:each) do
     visit book_path
   end

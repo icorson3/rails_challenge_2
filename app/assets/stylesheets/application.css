@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('background.jpeg');
+  background-size: cover;
+}
+
+.top {
+  text-align: center;
+  font-size: 30px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.main {
+  border: 1px solid black;
+
+}
+
+.aside {
+  border: 1px solid black;
+
+}

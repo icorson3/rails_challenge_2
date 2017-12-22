@@ -20,11 +20,18 @@ describe Book do
     it ".best_review" do
       best_review = @book.best_review
 
-      expect(best_review.rating).to eq(5)
-      expect(best_review.user.name).to eq("KenM")
-      expect(best_review.body).to eq("Best story book ever")
+      expect(best_review.rating).to eq(@review_1.rating)
+      expect(best_review.author).to eq(@review_1.author)
+      expect(best_review.body).to eq(@review_1.body)
     end
 
+    it ".worst_review" do
+      worst_review = @book.worst_review
+
+      expect(worst_review.rating).to eq(@review_2.rating)
+      expect(worst_review.author).to eq(@review_2.author)
+      expect(worst_review.body).to eq(@review_2.body)
+    end
 
   end
 

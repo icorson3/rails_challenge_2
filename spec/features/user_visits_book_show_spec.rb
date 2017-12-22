@@ -37,17 +37,17 @@ describe "User visits book show page" do
 
       within ".highest_rating" do
         expect(page).to have_content("Highest Rating: #{@review_1.rating}")
-        expect(page).to have_content("Author: #{@user_1.name}")
+        expect(page).to have_content("Author: #{@review_1.author}")
         expect(page).to have_content("Body: #{@review_1.body}")
       end
     end
 
-    xit "has lowest book rating, with body and user of review" do
+    it "has lowest book rating, with body and user of review" do
       visit book_path(@book)
 
       within ".lowest_rating" do
-        expect(page).to have_content("Highest Rating: #{@review_2.rating}")
-        expect(page).to have_content("Author: #{@user_2.name}")
+        expect(page).to have_content("Lowest Rating: #{@review_2.rating}")
+        expect(page).to have_content("Author: #{@review_2.author}")
         expect(page).to have_content("Body: #{@review_2.body}")
       end
     end

@@ -9,13 +9,16 @@ describe "As a visitor" do
 
       @book = Book.create!(title: "Barnia")
 
-      @review_1 = @book.reviews.create!(review_title: "jesus", body: "Terrible", author: @user, rating: 1)
-      @review_2 = Review.create!(review_title: "Sooo Hot right now", body: "Great", author: @user_2, rating: 5)
-      @review_3 = Review.create!(review_title: "Lukewarm", body: "ok", author: @user_3, rating: 3)
+      @review_1 = @user.reviews.create!(review_title: "jesus", body: "Terrible", rating: 1, book: @book)
+      @review_2 = @user_2.reviews.create!(review_title: "Sooo Hot right now", body: "Great", rating: 5, book: @book)
+      @review_3 = @user_3.reviews.create!(review_title: "Lukewarm", body: "ok",  rating: 3, book: @book)
 
       visit book_path(@book)
+
     end
+
     it "displays book title, list of reviews for that book, the body of the review, the user who created taht review, and it also displays rating" do
+
 
       expect(page).to have_content("jesus")
       expect(page).to have_content("Sooo Hot right now")

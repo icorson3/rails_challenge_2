@@ -10,4 +10,8 @@ class Book < ApplicationRecord
   def best_review
     reviews.order("rating DESC").first
   end
+
+  def worst_review
+    reviews.order("rating ASC").first
+  end
 end

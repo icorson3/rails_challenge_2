@@ -1,12 +1,18 @@
 <h1><%= @book.title %></h1>
+<h5>Average rating: <%= @book.average_rating %></h5>
 
-<ul>
-  <li>Average rating: <%= @book.average_rating %></li>
-  <li>highest_rating: <%= @book.best_review.rating %>
-    <li>Author: <%= @book.best_review.author %></li>
-    <li>Body: <%= @book.best_review.body %></li>
-  </li>
-</ul>
+<h3 class="highest_rating">Highest Rating: <%= @book.best_review.rating %></h3>
+  <ul>
+    <li id="highest_rating_author">Author: <%= @book.best_review.author %></li>
+    <li id="highest_rating_body">Body: <%= @book.best_review.body %></li>
+  </ul>
+
+<h3 class="lowest_rating">Lowest Rating: <%= @book.worst_review.rating %></h3>
+  <ul>
+    <li id="lowest_rating_author">Author: <%= @book.worst_review.author %></li>
+    <li id="lowest_rating_body">Body: <%= @book.worst_review.body %></li>
+  </ul>
+
 
 
 <h3>Reviews</h3>

@@ -37,7 +37,13 @@ describe "User visits book show page" do
 
       within ".highest_rating" do
         expect(page).to have_content("Highest Rating: #{@review_1.rating}")
+      end
+
+      within "#highest_rating_author" do
         expect(page).to have_content("Author: #{@review_1.author}")
+      end
+
+      within "#highest_rating_body" do
         expect(page).to have_content("Body: #{@review_1.body}")
       end
     end
@@ -47,7 +53,13 @@ describe "User visits book show page" do
 
       within ".lowest_rating" do
         expect(page).to have_content("Lowest Rating: #{@review_2.rating}")
+      end
+
+      within "#lowest_rating_author" do
         expect(page).to have_content("Author: #{@review_2.author}")
+      end
+
+      within "#lowest_rating_body" do
         expect(page).to have_content("Body: #{@review_2.body}")
       end
     end

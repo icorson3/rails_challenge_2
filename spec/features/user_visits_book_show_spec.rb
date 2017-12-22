@@ -42,7 +42,7 @@ describe "User visits book show page" do
       end
     end
 
-    it "has lowest book rating, with body and user of review" do
+    xit "has lowest book rating, with body and user of review" do
       visit book_path(@book)
 
       within ".lowest_rating" do

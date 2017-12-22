@@ -44,14 +44,20 @@ describe "As a visitor" do
       expect(page).to have_content(3)
     end
 
-    it "displays highest rating for that book" do
+    it "displays highest rating for that book as well as the author and body of review" do
       expect(page).to have_content("Highest Rating:")
       expect(page).to have_content(5)
+
+      expect(page).to have_content("James")
+      expect(page).to have_content("Great")
     end
 
-    it "displays loweest rating for that book" do
+    it "displays loweest rating for that book as well as the author and body of that review" do
       expect(page).to have_content("Lowest Rating:")
       expect(page).to have_content(1)
+
+      expect(page).to have_content("Tim")
+      expect(page).to have_content("Terrible")
     end
   end
 end

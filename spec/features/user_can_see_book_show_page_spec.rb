@@ -11,6 +11,7 @@ describe "When a visitor visits a Book show page" do
     @book.reviews << @review2
 
     visit book_path(@book)
+
   end
 
   it "sees the book's title, list of reviews, and the user for each review" do
@@ -23,18 +24,31 @@ describe "When a visitor visits a Book show page" do
   end
 
   it "can see the average rating for that book" do
-    skip
-    average = (@review1.rating + @review2.rating).to_f / 2
     expect(page).to have_content 4.0
   end
 
-  it "can see the highest rating for that book" do
-    expect(page).to have_content "Highest Rating: 5"
+  context "can see the highest rating for that book" do
+    it "along with the review body and name of reviewer" do
+      expect(page).to have_content "Highest Rating: 5"
+
+      within(:css, "div#highest-rating") do
+        expect(page).to have_content @review1.body
+        expect(page).to have_content @review1.rating
+      end
+    end
   end
 
-  it "can see the lowest rating for that book" do
-    expect(page).to have_content "Lowest Rating: 3"
+  context "can see the highest rating for that book" do
+    it "along with the review body and name of reviewer" do
+      expect(page).to have_content "Lowest Rating: 3"
+
+      within(:css, "div#lowest-rating") do
+        expect(page).to have_content @review2.body
+        expect(page).to have_content @review2.rating
+      end
+    end
   end
+
 
 
 end

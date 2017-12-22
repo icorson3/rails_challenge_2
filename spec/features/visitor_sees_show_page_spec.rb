@@ -38,5 +38,9 @@ describe "As a visitor" do
       expect(page).to have_content(3)
 
     end
+
+    it 'displays the average rating for that book' do
+      expect(page).to have_content(3)
+    end
   end
 end

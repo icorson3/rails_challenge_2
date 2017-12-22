@@ -8,7 +8,7 @@ describe "a user visits the book show page" do
           review1 = Review.new(book_id: book.id, user_id: user1.id, body: "Awesome Book", rating: 4)
           review2 = Review.new(book_id: book.id, user_id: user2.id, body: "Was Ok", rating: 2)
 
-          visit "/books/#{book.id}"
+          visit book_path(book)
 
           expect(current_path).to eq("/books/#{book.id}")
 

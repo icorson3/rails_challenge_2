@@ -1,25 +1,24 @@
-describe Book do
+describe User do
   describe "relationships" do
     it "has many reviews" do
-      book = Book.create(title: "Gravity's Angels")
+      user = User.create(name: "max")
 
-      expect(book).to respond_to(:reviews)
+      expect(user).to respond_to(:reviews)
     end
 
   end
 
   describe "validations" do
-    it "is invalid without title" do
-      book = Book.new()
+    it "is invalid without name" do
+      user = User.new()
 
-      expect(book).to be_invalid
+      expect(user).to be_invalid
     end
 
-    it "is valid with title" do
-      book = Book.new(title: "Gravity's Angels")
+    it "is valid with name" do
+      user = User.new(name:"Max")
 
-      expect(book).to be_valid
+      expect(user).to be_valid
     end
   end
-
 end

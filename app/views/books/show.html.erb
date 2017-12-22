@@ -2,10 +2,10 @@
   <%= @book.title %>
 </div>
 <div class="">
-  <h1><%= @book.reviews.highest_rating %></h1>
+  <h1><%= @book.highest_rating %></h1>
 </div>
 <div class="">
-  <h1><%= @book.reviews.lowest_rating %></h1>
+  <h1><%= @book.lowest_rating %></h1>
 </div>
 <div class="">
   <ul>
@@ -13,9 +13,9 @@
       <li><%= review.body %></li>
       <li><%= review.body %></li>
       <li><%= review.body %></li>
-    <% end %>    
+    <% end %>
   </ul>
 </div>
 <div class="">
-  <p>Average Rating: <%= @book.reviews.average_rating %></p>
+  <p>Average Rating: <%= @book.average_rating %></p>
 </div>

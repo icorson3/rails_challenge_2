@@ -3,7 +3,7 @@
 <h3>Reviews</h3>
 
 <% @book.reviews.each do |review| %>
-  <%= review.user %>
+  <%= review.user.name %>
   <%= review.body %>
   <%= review.rating %>
 <% end %>

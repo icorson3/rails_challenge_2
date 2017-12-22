@@ -1,0 +1,21 @@
+<h1>Show page for <%= @book.title %> </h1>
+
+<h2>Reviews</h2>
+
+<% @book.reviews.each do |review| %>
+  <%= review.body %>
+  <%= review.rating %>
+  <%= review.user.name %>
+<% end  %>
+
+<h2>Average Rating for this Book: <%= @book.average_rating %></h2>
+
+<div id="highest-rating">Highest Rating: <%=@book.highest_rating %>
+  <p> <%= @book.highest_rated_review.body %></p>
+  <p> <%= @book.highest_rated_review.user.name %></p>
+</div>
+
+<div id="lowest-rating">Lowest Rating: <%=@book.lowest_rating %>
+  <p> <%= @book.lowest_rated_review.body %></p>
+  <p> <%= @book.lowest_rated_review.user.name %></p>
+</div>

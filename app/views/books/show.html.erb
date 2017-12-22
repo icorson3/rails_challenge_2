@@ -1,0 +1,4 @@
+<%= @book.title %>
+
+<%=render partial: 'reviews/form'%>
+<%= render partial: 'review', collection: @book.reviews%>

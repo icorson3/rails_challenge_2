@@ -1,0 +1,7 @@
+<div>
+  <p class="review"><%= @review.body %></p>
+  <% if @review.user %>
+  <p class="review"><%= @review.user.name %></p>
+  <% end %>
+  <p class="review"><%= @review.rating %></p>
+</div>

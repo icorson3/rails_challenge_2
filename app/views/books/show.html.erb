@@ -1,0 +1,9 @@
+<h1>Show page for <%= @book.title %> </h1>
+
+<h2>Reviews</h2>
+
+<% @book.reviews.each do |review| %>
+  <%= review.body %>
+  <%= review.rating %>
+  <%= review.user.name %>
+<% end  %>

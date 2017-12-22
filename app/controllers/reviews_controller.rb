@@ -1,3 +1,4 @@
 class Reviews < ApplicationController
-  
+
+
 end

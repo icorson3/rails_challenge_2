@@ -1,3 +1,6 @@
 <%= @book.title %>
-<%= @book.reviews.body %>
-<%= @book.reviews.rating %>
+<% @book.reviews.each do | review |  %>
+<%= review.body %>
+<%= review.rating %>
+<% end  %>
+<%= @book.average_ratng %>

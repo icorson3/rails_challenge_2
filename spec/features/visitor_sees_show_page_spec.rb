@@ -9,9 +9,10 @@ describe "As a visitor" do
 
       @book = Book.create!(title: "Barnia")
 
-      @review_1 = @user.reviews.create!(review_title: "jesus", body: "Terrible", rating: 1, book: @book)
-      @review_2 = @user_2.reviews.create!(review_title: "Sooo Hot right now", body: "Great", rating: 5, book: @book)
-      @review_3 = @user_3.reviews.create!(review_title: "Lukewarm", body: "ok",  rating: 3, book: @book)
+      @review_1 = @user.reviews.create!(review_title: "jesus", body: "Terrible", author: @user.name, rating: 1, book: @book)
+
+      @review_2 = @user_2.reviews.create!(review_title: "Sooo Hot right now", body: "Great", rating: 5, book: @book, author: @user_2.name)
+      @review_3 = @user_3.reviews.create!(review_title: "Lukewarm", body: "ok",  rating: 3, book: @book, author: @user_3.name)
 
       visit book_path(@book)
 

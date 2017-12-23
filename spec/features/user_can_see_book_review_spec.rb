@@ -39,14 +39,46 @@ describe 'book reviews' do
           review2 = book.reviews.create(body: "it was real bad", rating: 2, user_id: user.id, book_id: book.id)
           review3 = book.reviews.create(body: "it was not good", rating: 3, user_id: user.id, book_id: book.id)
 
-          # byebug
           visit "/books/#{book.id}"
 
-# save_and_open_page
           expect(page).to have_content(2)
-
-
         end
+
+          it  'sees the user that highest rating for the review' do
+            book = Book.create(title: 'Left hand of darkness')
+            user = User.create(name: "Joe")
+            review1 = book.reviews.create(body: "it was bad", rating: 1, user_id: user.id, book_id: book.id)
+            review2 = book.reviews.create(body: "it was real bad", rating: 2, user_id: user.id, book_id: book.id)
+            review3 = book.reviews.create(body: "it was not good", rating: 5, user_id: user.id, book_id: book.id)
+
+            visit "/books/#{book.id}"
+
+            expect(page).to have_content("Highest Rating: 5")
+          end
+
+          it  'sees the user that lowest rating for the review' do
+            book = Book.create(title: 'Left hand of darkness')
+            user = User.create(name: "Joe")
+            review1 = book.reviews.create(body: "it was bad", rating: 1, user_id: user.id, book_id: book.id)
+            review2 = book.reviews.create(body: "it was real bad", rating: 2, user_id: user.id, book_id: book.id)
+            review3 = book.reviews.create(body: "it was not good", rating: 5, user_id: user.id, book_id: book.id)
+
+            visit "/books/#{book.id}"
+
+            expect(page).to have_content("Lowest Rating: 1")
+          end
+
+          # it  'sees the user that review that has the highest ' do
+          #   book = Book.create(title: 'Left hand of darkness')
+          #   user = User.create(name: "Joe")
+          #   review1 = book.reviews.create(body: "it was bad", rating: 1, user_id: user.id, book_id: book.id)
+          #   review2 = book.reviews.create(body: "it was real bad", rating: 2, user_id: user.id, book_id: book.id)
+          #   review3 = book.reviews.create(body: "it was really quite good", rating: 5, user_id: user.id, book_id: book.id)
+          #
+          #   visit "/books/#{book.id}"
+          #
+          #   expect(page).to have_content("it was really quite good")
+          # end
   end
 end
 

@@ -17,19 +17,36 @@ describe 'book reviews' do
     end
 
     #
-    # it  'see the user that created the review' do
-    #   book = Book.create(title: 'Left hand of darkness')
-    #   user = User.create(name: "Joe")
-    #   review = book.reviews.create(body: "it was good", rating: 4, user_id: user.id, book_id: book.id)
-    #
-    #   visit "/books/#{book.id}"
-    #
-    #   expect(page).to have_content("Left hand of darkness")
-    #   expect(page).to have_content("it was good")
-    #   expect(page).to have_content(4)
-    #
-    #
-    # end
+    it  'sees the user that created the review' do
+      book = Book.create(title: 'Left hand of darkness')
+      user = User.create(name: "Joe")
+      review1 = book.reviews.create(body: "it was bad", rating: 2, user_id: user.id, book_id: book.id)
+      review2 = book.reviews.create(body: "it was alright", rating: 4, user_id: user.id, book_id: book.id)
+      review3 = book.reviews.create(body: "it was good", rating: 6, user_id: user.id, book_id: book.id)
+
+      visit "/books/#{book.id}"
+
+
+      expect(page).to have_content("#{user.id}")
+
+
+    end
+
+        it  'sees the user that average rating for the review' do
+          book = Book.create(title: 'Left hand of darkness')
+          user = User.create(name: "Joe")
+          review1 = book.reviews.create(body: "it was bad", rating: 1, user_id: user.id, book_id: book.id)
+          review2 = book.reviews.create(body: "it was real bad", rating: 2, user_id: user.id, book_id: book.id)
+          review3 = book.reviews.create(body: "it was not good", rating: 3, user_id: user.id, book_id: book.id)
+
+          # byebug
+          visit "/books/#{book.id}"
+
+# save_and_open_page
+          expect(page).to have_content(2)
+
+
+        end
   end
 end
 

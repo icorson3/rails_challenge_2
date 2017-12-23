@@ -2,5 +2,7 @@
 <%= @reviews.each  do |review| %>
   <%= review.body %>
   <%= review.rating %>
-
+  <%= review.user_id %>
 <% end %>
+
+<%= @average %>

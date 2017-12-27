@@ -2,15 +2,14 @@ class Book < ApplicationRecord
   has_many :reviews
 
   def average_rating
-    byebug
-    avg(reviews.rating)
+    reviews.average(:rating)
   end
 
   def maximum_rating
-    maximum(reviews.rating)
+    reviews.maximum(:rating)
   end
 
   def minimum_rating
-    minimum(reviews.rating)
+    reviews.minimum(:rating)
   end
 end

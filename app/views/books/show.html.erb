@@ -4,3 +4,9 @@
   <%= review.rating %>
   <%= review.user.name %>
 <% end %>
+
+<h1>Highest Rating: <% @max %></h1>
+<h2>Lowest Rating: <% @min %></h2>
+<p>
+Average Rating:<%= @avg %>
+</p>

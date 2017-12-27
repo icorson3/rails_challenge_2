@@ -22,4 +22,10 @@ describe 'a user visits the show page' do
     expect(page).to have_content("Lowest Rating: 1")
     expect(page).to have_content("Average Rating: 3.0")
   end
+
+  it 'sees associated body and user name for max and min ratings' do
+
+    expect(page).to have_content 'anotherreview timo'
+    expect(page).to have_content 'a review timo'
+  end
 end

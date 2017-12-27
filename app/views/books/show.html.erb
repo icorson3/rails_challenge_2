@@ -6,7 +6,13 @@
 <% end %>
 
 <h1>Highest Rating: <%= @max %></h1>
+  <% @max_review = Review.find_by(rating: @max) %>
+  <%= @max_review.body %>
+  <%= @max_review.user.name %>
 <h2>Lowest Rating: <%= @min %></h2>
+  <% @min_review = Review.find_by(rating: @min) %>
+  <%= @min_review.body %>
+  <%= @min_review.user.name %>
 <p>
 Average Rating: <%= @avg %>
 </p>

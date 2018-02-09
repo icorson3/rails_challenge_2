@@ -5,6 +5,7 @@ describe "User sees one book" do
     book = Book.create(title: "title")
     review_1 = book.reviews.create(reviewer: "reviewer 1", body: "review 1", rating: 10)
     review_2 = book.reviews.create(reviewer: "reviewer 2", body: "review 2", rating: 1)
+
     visit "/books/#{book.id}"
 
     expect(page).to have_content(book.title)
@@ -18,6 +19,7 @@ describe "User sees one book" do
     review_1 = book.reviews.create(reviewer: "reviewer 1", body: "review 1", rating: 10)
     review_2 = book.reviews.create(reviewer: "reviewer 2", body: "review 2", rating: 1)
     review_3 = book.reviews.create(reviewer: "reviewer 3", body: "review 3", rating: 100)
+
     visit "/books/#{book.id}"
 
     expect(page).to have_content("Highest Rating: #{review_3.rating}")

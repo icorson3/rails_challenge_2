@@ -22,5 +22,10 @@ describe "User sees one book" do
 
     expect(page).to have_content("Highest Rating: #{review_3.rating}")
     expect(page).to have_content("Lowest Rating: #{review_2.rating}")
+    expect(page).to have_content("review_3.body")
+    expect(page).to have_content("review_3.reviewer")
+    expect(page).to have_content("review_2.body")
+    expect(page).to have_content("review_2.reviewer")
+    expect(page).to_not have_content("review_1.body")
   end
 end

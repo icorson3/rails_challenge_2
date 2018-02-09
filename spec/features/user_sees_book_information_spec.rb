@@ -31,5 +31,18 @@ describe "user sees book information" do
 
       expect(page).to have_content("Average Rating: 3.5")
     end
+
+    it "they can see the book's highest rating" do
+      book = Book.create!(title: "Harry Potter")
+      user_1 = User.create!(name: "Severus Snape")
+      user_2 = User.create!(name: "Ron Weasley")
+      review_1 = Review.create!(book: book, user: user_1, body: "Excellent character development.", rating: 4)
+      review_2 = Review.create!(book: book, user: user_2, body: "Superb romance.", rating: 3)
+
+      visit book_path(book)
+
+      within(".highest-rating")
+        expect(page).to have_content("Highest Rating: 4")
+    end
   end
 end

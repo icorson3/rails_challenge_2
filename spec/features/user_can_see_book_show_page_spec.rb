@@ -18,7 +18,7 @@ describe "iser sees book show page" do
       review2 = Review.create!(body: "body2", rating: 4, user: user, book: book)
 
       visit book_path(book)
-
+save_and_open_page
       expect(page).to have_content(book.reviews.first.body)
       expect(page).to have_content(book.reviews.second.body)
       expect(page).to have_content(book.reviews.first.rating)

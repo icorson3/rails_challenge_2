@@ -22,6 +22,9 @@ describe "As a user" do
       expect(page).to have_content("5")
       expect(page).to have_content("1")
       expect(page).to have_content("Average rating for Infinite Jest: 3.0")
+      expect(page).to have_content("Highest Rating: 5")
+      expect(page).to have_content("Lowest Rating: 1")
+
     end
   end
 end

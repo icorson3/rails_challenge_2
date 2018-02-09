@@ -1,3 +1,10 @@
+<h1> Highest Rating: <%= @book.reviews.by_rating.last.rating%> </h1>
+<p> <%= @book.reviews.by_rating.last.body %> as reviewed by <%= @book.reviews.by_rating.last.user.name %> </p>
+
+<h2> Lowest Rating: <%= @book.reviews.by_rating.first.rating%> </h2>
+<p> <%= @book.reviews.by_rating.first.body %> as reviewed by  <%= @book.reviews.by_rating.first.user.name %> </p>
+
+
 <%= @book.title %> </br>
 
 <% @book.reviews.each do |review| %>

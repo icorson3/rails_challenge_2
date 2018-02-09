@@ -1,4 +1,5 @@
 <%= @book.title %>
+average rating: <%= @book.average_rating %>
 <ul>
   <% @book.reviews.each do |review| %>
     <li>review body: <%= review.body %></li>

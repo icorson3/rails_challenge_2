@@ -1,5 +1,4 @@
 class Rating < ApplicationRecord
 
-  
 
 end

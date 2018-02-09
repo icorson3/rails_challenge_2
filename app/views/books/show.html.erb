@@ -10,5 +10,6 @@
 <h2>Other Reviews:</h2>
 
 <% @book.reviews.each do |review| %>
-  <%= review.reviewer %> rated this book <%= review.rating %>
+  <%= review.reviewer %> rated this book <%= review.rating %>:
+  <%= review.body %>
 <% end %>

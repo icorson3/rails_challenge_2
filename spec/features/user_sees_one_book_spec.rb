@@ -11,8 +11,10 @@ describe "User sees one book" do
     expect(page).to have_content(book.title)
     expect(page).to have_content(review_1.reviewer)
     expect(page).to have_content(review_2.reviewer)
+    expect(page).to have_content(review_1.rating)
     expect(page).to have_content(review_2.rating)
-    expect(page).to have_content(review_2.rating)
+    expect(page).to have_content(review_1.body)
+    expect(page).to have_content(review_2.body)
   end
   it "displays highest and lowest rating" do
     book = Book.create(title: "title")

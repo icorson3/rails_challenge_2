@@ -9,19 +9,11 @@ class Book < ApplicationRecord
     reviews.order(:rating)
   end
 
-  def highest_rating
-    sort_reviews_by_rating.last.rating
+  def highest_review
+    sort_reviews_by_rating.last
   end
 
-  def highest_rating_review
-    sort_reviews_by_rating.last.body
-  end
-
-  def lowest_rating
-    sort_reviews_by_rating.first.rating
-  end
-
-  def lowest_rating_review
-    sort_reviews_by_rating.first.body
+  def lowest_review
+    sort_reviews_by_rating.first
   end
 end

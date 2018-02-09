@@ -1,13 +1,15 @@
 <h1><%= @book.title %></h1>
 
 <div class="highest-rating">
-<h2>Highest Rating: <%= @book.highest_rating %></h2>
-<p><%= @book.highest_rating_review %></p>
+<h2>Highest Rating: <%= @book.highest_review.rating %></h2>
+<p><%= @book.highest_review.body %></p>
+<p><%= @book.highest_review.user %></p>
 </div>
 
 <div class="lowest-rating">
-<h2>Lowest Rating: <%= @book.lowest_rating %></h2>
-<p><%= @book.lowest_rating_review %></p>
+<h2>Lowest Rating: <%= @book.lowest_review.rating %></h2>
+<p><%= @book.lowest_review.body %></p>
+<p><%= @book.lowest_review.user %></p>
 </div>
 
 Reviews:

@@ -30,5 +30,21 @@ describe "As a User" do
       expect(page).to have_content("Average Rating: 4")
     end
 
+    it "I can see the highest rating for the book" do
+      Review.create(title: "Box of Stupids", body: "Da bad wey", book: @book, user: @user, rating: 3)
+
+      visit book_path(@book)
+
+      expect(page).to have_content("Highest Rating: 4")
+    end
+
+    it "I can see the lowest rating for the book" do
+      Review.create(title: "Box of Stupids", body: "Da bad wey", book: @book, user: @user, rating: 3)
+
+      visit book_path(@book)
+
+      expect(page).to have_content("Lowest Rating: 4")
+    end
+
   end
 end

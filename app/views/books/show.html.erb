@@ -1,0 +1,8 @@
+<h1><%= @book.title %></h1>
+<p>
+  <%= @book.body %>
+</p>
+<% @book.reviews.each do |review| %>
+<p>
+  <%= review.content %>
+</p>

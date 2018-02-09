@@ -2,9 +2,12 @@ require 'rails_helper'
 
 describe 'As a user' do
   context 'when I visit a book show page' do
-    scenario 'I see the book title and a list of reviews for that book' do
-      book = create(:book)
-      visit book_path
+    before(:each) { @book = create(:book) }
+    scenario 'I see the book title and body' do
+      visit book_path(1)
+
+      expect(page).to have_content(@book.title)
+      expect(page).to have_content(@book.body)
     end
   end
 end

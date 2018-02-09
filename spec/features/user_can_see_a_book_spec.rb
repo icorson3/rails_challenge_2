@@ -14,5 +14,18 @@ describe "user can see individual book information" do
 
       expect(page).to have_content("Title: Catcher in the Rye")
     end
+
+    it "displays book reviews" do
+      book = Book.create!(title: "Catcher in the Rye")
+      review_1 = book.reviews.create!(user_name: "Billy",
+                                      body: "I enjoyed this one!",
+                                      rating: 5)
+
+      visit book_path(book)
+
+      expect(page).to have_content("Billy")
+      expect(page).to have_content("I enjoyed this one!")
+      expect(page).to have_content(5)
+    end
   end
 end

@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+user = User.create!(name: 'Bill')
+book = Book.create!(title:'Gone with the Wind', body: 'I will never eat again!')
+Review.create!(user: user, book: book, rating: 4, body: 'great')
+Review.create!(user: user, book: book, rating: 4, body: 'great')
+Review.create!(user: user, book: book, rating: 4, body: 'great')

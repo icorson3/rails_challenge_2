@@ -1,4 +1,6 @@
 Book Title: <%= @book.title %>
 <% ratings = @book.ratings %>
 <% average_ratings = ratings.map(&:rating).sum/ratings.count %>
+<% highest_rating = ratings.max %>
 Average Rating: <%= average_ratings.round(4) %>
+Highest Rating: <%= highest_rating.rating %>

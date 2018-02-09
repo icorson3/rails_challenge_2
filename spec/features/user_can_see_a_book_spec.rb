@@ -8,7 +8,11 @@ require 'rails_helper'
 describe "user can see individual book information" do
   context "visits book show page" do
     it "displays book informations" do
+      book = Book.create!(title: "Catcher in the Rye")
 
+      visit book_path(book)
+
+      expect(page).to have_content("Title: Catcher in the Rye")
     end
   end
 end

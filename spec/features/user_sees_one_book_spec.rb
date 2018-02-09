@@ -13,7 +13,7 @@ describe "User sees one book" do
     expect(page).to have_content(review_2.rating)
     expect(page).to have_content(review_2.rating)
   end
-  it "displays highest_rating" do
+  it "displays highest and lowest rating" do
     book = Book.create(title: "title")
     review_1 = book.reviews.create(reviewer: "reviewer 1", body: "review 1", rating: 10)
     review_2 = book.reviews.create(reviewer: "reviewer 2", body: "review 2", rating: 1)
@@ -21,5 +21,6 @@ describe "User sees one book" do
     visit "/books/#{book.id}"
 
     expect(page).to have_content("Highest Rating: #{review_3.rating}")
+    expect(page).to have_content("Lowest Rating: #{review_2.rating}")
   end
 end

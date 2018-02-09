@@ -1,7 +1,9 @@
 <%= @book.title %> </br>
 
 <% @book.reviews.each do |review| %>
-    <%=review.body  %> </br>
-    <%=review.rating %> </br>
-    Reviewed by: <%=review.user.name%>
-    <% end %>
+    Review: <%=review.body  %> </br>
+    Rating: <%=review.rating %> </br>
+    Reviewed by: <%=review.user.name%> </br> </br>
+  <% end %>
+
+<p> Average rating for <%= @book.title %>: <%= @book.reviews.average_rating%></p>

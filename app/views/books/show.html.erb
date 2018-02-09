@@ -1,0 +1,17 @@
+<h2> Books </h2>
+
+<%= @book.title %>
+
+<%= form_for [@book, @user] do |f| %>
+  <%= f.label :review, "Review" %>
+  <%= f.text_field :review %>
+
+  <%= f.submit %>
+<% end %>
+
+
+
+<% @book.reviews.reverse.each_with_index do |review, i| %>
+  <%= review.review %><br>
+  <br><br>
+<% end %>

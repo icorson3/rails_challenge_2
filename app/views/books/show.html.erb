@@ -5,4 +5,5 @@ Book Title: <%= @book.title %>
 <% lowest_rating = ratings.min %>
 Average Rating: <%= average_ratings.round(4) %>
 Highest Rating: <%= highest_rating.rating %>
+                <%= highest_rating.body %>
 Lowest Rating:  <%= lowest_rating.rating %>

@@ -8,4 +8,11 @@ FactoryBot.define do
   factory :user do
     sequence(:name) { |n| "Name #{n}"}
   end
+
+  factory :review do
+    sequence(:body) { "Body #{n}" }
+    rating 4
+    book
+    user
+  end
 end

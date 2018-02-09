@@ -6,4 +6,8 @@ class Review < ApplicationRecord
   def self.average_rating
     average(:rating)
   end
+
+  def self.by_rating
+    order(:rating)
+  end
 end

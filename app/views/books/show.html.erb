@@ -1,4 +1,7 @@
 <%= @book.title %>
+highest rating: <%= @book.highest_rating %>
+review author
+lowest rating: <%= @book.lowest_rating %>
 average rating: <%= @book.average_rating %>
 <ul>
   <% @book.reviews.each do |review| %>

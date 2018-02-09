@@ -36,4 +36,16 @@ RSpec.describe Review, type: :model do
       expect(review).to be_valid
     end
   end
+
+  describe "Relationships" do
+    it "belongs to a user" do
+      review = Review.create(title: "Box of Secrets", body: "Da wey", book: @book, user: @user, rating: 5)
+      expect(review).to respond_to(:user)
+    end
+
+    it "belongs to a book" do
+      review = Review.create(title: "Box of Secrets", body: "Da wey", book: @book, user: @user, rating: 5)
+      expect(review).to respond_to(:book)
+    end
+  end
 end

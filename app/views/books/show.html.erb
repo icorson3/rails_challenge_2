@@ -1,3 +1,4 @@
 Book Title: <%= @book.title %>
-<% ratings = @book.map(&:ratings).sum/ratings.count %>
-Average Rating: <%= ratings %>
+<% ratings = @book.ratings %>
+<% average_ratings = ratings.map(&:rating).sum/ratings.count %>
+Average Rating: <%= average_ratings.round(4) %>

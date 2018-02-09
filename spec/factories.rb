@@ -7,5 +7,10 @@ FactoryBot.define do
     sequence(:name) { |n| "Kira Montfloral Esq. the #{n}"}
   end
 
+  factory :review do
+    sequence(:rating) { |n| "#{n}"}
+    book
+    user
+  end
   
 end

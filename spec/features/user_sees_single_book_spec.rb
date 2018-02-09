@@ -15,6 +15,7 @@ describe "user can see single book" do
       expect(page).to have_content(review.rating)
       expect(page).to have_content(book.average_rating)
       expect(page).to have_content(book.top_rating)
+      expect(page).to have_content(book.lowest_rating)
     end
   end
 end

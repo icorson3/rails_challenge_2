@@ -1,4 +1,6 @@
-<%= @book.title %>
+<h1><%= @book.title %></h1>
+
+<h2 class="highest-rating">Highest Rating: <%= @book.highest_rating %></h2>
 
 Reviews:
 <% @reviews.each do |review| %>

@@ -16,9 +16,9 @@ describe User do
   end
 
   describe "Relationships" do
-    it "has many books" do
+    it "has many reviews" do
       user = User.create!(name: "Eupanifahorious")
-      expect(user).to respond_to(:books)
+      expect(user).to respond_to(:reviews)
     end
   end
 end

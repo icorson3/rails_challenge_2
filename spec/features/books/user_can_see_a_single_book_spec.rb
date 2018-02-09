@@ -2,8 +2,8 @@ require "rails_helper"
 
 describe "As a User" do
   before :each do
-    @book = Book.create!(title: "Opakawagalaga")
     @user = User.create!(name: "Eupanifahorious")
+    @book = Book.create!(title: "Opakawagalaga")
   end
   describe "when I visit the books/:id page" do
     it "I can see the book title" do

@@ -16,9 +16,9 @@ describe Book do
   end
 
   describe "Relationships" do
-    it "belongs to a user" do
+    it "has many reviews" do
       book = Book.create!(title: "Opakawagalaga")
-      expect(book).to respond_to(:user)
+      expect(book).to respond_to(:reviews)
     end
   end
 end

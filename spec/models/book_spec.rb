@@ -18,7 +18,7 @@ describe Book, type: :model do
       review_2 = book.reviews.create!(user_name: "molly",
                                       body: "I did not enjoy this one!",
                                       rating: 1)
-
+                                      
       average_ratings = Book.average_ratings
       book_average_rating = average_ratings.find(book.id).avg_rating
 

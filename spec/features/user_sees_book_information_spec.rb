@@ -44,6 +44,7 @@ describe "user sees book information" do
       within(".highest-rating")
         expect(page).to have_content("Highest Rating: 4")
         expect(page).to have_content("Excellent character development.")
+        expect(page).to have_content("Severus Snape")
     end
 
     it "they can see the book's highest rating" do
@@ -58,6 +59,7 @@ describe "user sees book information" do
       within(".lowest-rating")
         expect(page).to have_content("Lowest Rating: 3")
         expect(page).to have_content("Superb romance")
+        expect(page).to have_content("Ron Weasley")
     end
   end
 end

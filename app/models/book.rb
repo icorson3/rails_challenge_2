@@ -1,11 +1,11 @@
 class Book < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
-  def highest_rating
-    self.reviews.order('rating DESC').first.rating
+  def highest_review
+    self.reviews.order('rating DESC').first
   end
 
-  def lowest_rating
-    self.reviews.order('rating').first.rating
+  def lowest_review
+    self.reviews.order('rating').first
   end
 end

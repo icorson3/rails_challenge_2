@@ -3,5 +3,5 @@
 <h2>Reviews:</h2>
 
 <% @book.reviews.each do |review| %>
-  Review by <%= review.reviewer %>
+  <%= review.reviewer %> rated this book <%= review.rating %>
 <% end %>

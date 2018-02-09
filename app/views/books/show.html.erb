@@ -1,1 +1,9 @@
-<%= @book.title %>
+<p><%= @book.title %></p>
+<ul>
+  <% @book.reviews.each do |review| %>
+  <li>Title: <%= review.title %></li>
+  <li>Rating: <%= review.rating %></li>
+  <li>Body: <%= review.body %></li>
+  <li>Author: <%= review.user.name %></li>
+<% end %>
+</ul>

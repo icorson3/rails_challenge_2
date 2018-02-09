@@ -10,7 +10,7 @@ FactoryBot.define do
   end
 
   factory :review do
-    sequence(:body) { "Body #{n}" }
+    sequence(:body) { |n| "Body #{n}" }
     rating 4
     book
     user

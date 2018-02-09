@@ -1,0 +1,10 @@
+<p><%= @book.title %></p>
+<p>Average Rating: <%= @book.average_rating %></p>
+<ul>
+  <% @book.reviews.each do |review| %>
+  <li>Title: <%= review.title %></li>
+  <li>Rating: <%= review.rating %></li>
+  <li>Body: <%= review.body %></li>
+  <li>Author: <%= review.user.name %></li>
+<% end %>
+</ul>

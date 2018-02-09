@@ -9,9 +9,16 @@ describe User do
     end
 
     it "is valid with a name" do
-      user = User.create!(name: "Opakawagalaga")
+      user = User.create!(name: "Eupanifahorious")
 
       expect(user).to be_valid
+    end
+  end
+
+  describe "Relationships" do
+    it "has many books" do
+      user = User.create!(name: "Eupanifahorious")
+      expect(user).to respond_to(:books)
     end
   end
 end

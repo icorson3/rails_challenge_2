@@ -14,4 +14,11 @@ describe Book do
       expect(book).to be_valid
     end
   end
+
+  describe "Relationships" do
+    it "belongs to a user" do
+      book = Book.create!(title: "Opakawagalaga")
+      expect(book).to respond_to(:user)
+    end
+  end
 end

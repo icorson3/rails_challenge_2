@@ -18,6 +18,12 @@ describe "user can see one book and list of reviews for that book, including bod
       expect(page).to have_content(review_1.rating)
       expect(page).to have_content(review_2.body)
       expect(page).to have_content(review_2.rating)
+      expect(page).to have_content("highest rating: 4")
+      expect(page).to have_content("lowest rating: 1")
+      expect(page).to have_content("highest rating Review: This book is a classic.")
+      expect(page).to have_content("highest rating User: Ellen")
+      expect(page).to have_content("lowest rating Review: This book is a bore.")
+      expect(page).to have_content("lowest rating User: Trevor")
     end
   end
 end

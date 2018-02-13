@@ -1,0 +1,17 @@
+<%= @book.title %>
+<h2>highest rating: <%= @book.highest_rating %></h2>
+highest rating Review: <%= Review.find_by(rating: @book.highest_rating).body %><br>
+highest rating User: <%= User.find_by(id: (Review.find_by(rating: @book.highest_rating).user_id)).name %>
+
+<h2>lowest rating: <%= @book.lowest_rating %></h2>
+lowest rating Review: <%= Review.find_by(rating: @book.lowest_rating).body %><br>
+lowest rating User: <%= User.find_by(id: (Review.find_by(rating: @book.lowest_rating).user_id)).name %>
+
+<h2>Book Average Rating: <%= @book.average_rating %></h2>
+
+<h2>All Book Reviews:</h2>
+<% @book.reviews.each do |review| %>
+  <%= review.body %>
+  <%= review.rating %>
+  <%= review.user.name %>
+<% end %>

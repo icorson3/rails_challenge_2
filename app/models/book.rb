@@ -3,9 +3,15 @@ class Book < ApplicationRecord
 
   has_many :reviews
 
-  def self.average_ratings
-    select("books.*, AVG(rating) AS avg_rating")
-      .joins(:reviews)
-      .group(:id)
+  def average_rating
+    reviews.average('rating')
+  end
+
+  def highest_rating_review
+    reviews.order('rating').last
+  end
+
+  def lowest_rating_review
+    reviews.order('rating').first
   end
 end

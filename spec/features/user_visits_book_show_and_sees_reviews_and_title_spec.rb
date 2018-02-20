@@ -32,6 +32,6 @@ end
       review_2 = book.reviews.create!(body: "something",rating: 10, user_id: user.id, book_id: book.id)
       visit book_path(book)
 
-      expect(page).to have_content("Highest rating 20")
-    end
+      expect(page).to have_content(20)
   end
+end

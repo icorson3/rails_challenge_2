@@ -6,4 +6,8 @@ class Book < ApplicationRecord
     reviews.average(:rating)
   end
 
-end 
+  def highest_review
+    reviews.maximum(:rating)
+  end 
+
+end

@@ -47,3 +47,16 @@ describe "user sees the lowest review of book"  do
     expect(page).to have_content(5)
   end
 end
+
+describe "user sees the highest rating of book user sees body and title of review"  do
+  it "when they visit book show page"  do
+    book = Book.create!(title: "Harry Potter")
+    user = User.create!(name: "Kyle")
+    review_1 = book.reviews.create!(body: "awesome",rating: 20, user_id: user.id, book_id: book.id)
+    review_2 = book.reviews.create!(body: "something",rating: 5, user_id: user.id, book_id: book.id)
+    visit book_path(book)
+
+    expect(page).to have_content("something")
+      expect(page).to have_content( )
+  end
+end

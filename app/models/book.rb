@@ -14,4 +14,8 @@ class Book < ApplicationRecord
     reviews.minimum(:rating)
   end
 
+  def highest_rating_review
+
+  end
+  
 end

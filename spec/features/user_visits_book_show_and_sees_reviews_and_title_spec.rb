@@ -8,7 +8,7 @@ require 'rails_helper'
     visit book_path
 
     expect(page).to have_content(book.title)
-    expect(page).to have_content(book.reviews.body)
-    expect(page).to have_content(book.reviews.rating)
+    expect(page).to have_content(review.body)
+    expect(page).to have_content(review.rating)
   end
-end 
+end
